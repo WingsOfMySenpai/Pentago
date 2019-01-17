@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+
+public class AI
+{
+  private GameBoard maxBoard;
+  private int max = 0;
+  private int depth = 0;
+  
+  public AI(int d)
+  {
+    depth = d;
+    max = 0;
+  }
+  
+  public GameBoard getBoard()
+  {
+    return maxBoard;
+  }
+  
+
+  public int intelligentMove(int depth, GameTree currentTree, boolean maximizingPlayer)
+  {
+    int bestVal = 0;
+    
+
+    if (depth == 0)
+    {
+
+
+      return currentTree.getBoard().getUtility();
+    }
+    
+    if (maximizingPlayer)
+    {
+      bestVal = Integer.MIN_VALUE;
+      currentTree.populateNodeChildren();
+      ArrayList<GameTree> childTrees = currentTree.getChildTrees();
+      
+      for (int i = 0; i < childTrees.size(); i++)
+      {
+
+        int thisVal = intelligentMove(depth - 1, (GameTree)childTrees.get(i), false);
+        if (bestVal < thisVal) {
+          bestVal = thisVal;
+        }
+      }
+      if ((bestVal > max) && (depth == this.depth - 1))
+      {
+        max = bestVal;
+        maxBoard = currentTree.getBoard();
+      }
+      return bestVal;
+    }
+    
+
+    bestVal = Integer.MAX_VALUE;
+    currentTree.populateNodeChildren();
+    ArrayList<GameTree> childTrees = currentTree.getChildTrees();
+    for (int i = 0; i < childTrees.size(); i++)
+    {
+      int thisVal = intelligentMove(depth - 1, (GameTree)childTrees.get(i), true);
+      if (bestVal > thisVal)
+        bestVal = thisVal;
+    }
+    return bestVal;
+  }
+  
+
+
+  public static String randomMove()
+  {
+    int min = 0;
+    int max = 5;
+    int row = min + (int)(Math.random() * (max - min + 1));
+    int col = min + (int)(Math.random() * (max - min + 1));
+    int rotation = 1 + (int)(Math.random() * 8.0D);
+    String returnString = row + " " + col + " ";
+    switch (rotation)
+    {
+    case 1: 
+      returnString = returnString + "A";
+      break;
+    case 2: 
+      returnString = returnString + "B";
+      break;
+    case 3: 
+      returnString = returnString + "C";
+      break;
+    case 4: 
+      returnString = returnString + "D";
+      break;
+    case 5: 
+      returnString = returnString + "a";
+      break;
+    case 6: 
+      returnString = returnString + "b";
+      break;
+    case 7: 
+      returnString = returnString + "c";
+      break;
+    default: 
+      returnString = returnString + "d";
+    }
+    
+    
+    return returnString;
+  }
+}
