@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>610</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>::GameTree
+--
+~thisBoard: GameBoard
+~children: java.util.ArrayList
+--
++GameTree(GameBoard): ctor
++populateNodeChildren(): void
++childNumber(): int
++getChildTrees(): java.util.ArrayList
++getBoard(): GameBoard
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>160</y>
+      <w>230</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>::Main
+--
+-depth: int
+~board: GameBoard
+~currentPlayer: int
+--
++Main(): ctor
+-parseInput(java.lang.String): void
+-startGame(): void
+-determineStarting(): void
++main(java.lang.String[]): void
+~Main(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>400</y>
+      <w>300</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>::AI
+--
+-maxBoard: GameBoard
+-max: int
+-depth: int
+--
++AI(int): ctor
++getBoard(): GameBoard
++intelligentMove(int, GameTree, boolean): int
++randomMove(): java.lang.String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>160</y>
+      <w>250</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>::GameBoard
+--
+-slots: int[][]
+-lastMove: java.lang.String
+--
++GameBoard(): ctor
++GameBoard(int[][]): ctor
++setLastMove(java.lang.String): void
++makeMove(int, int, int): void
++isValidMove(int, int): boolean
+~rotateClockwise(int[][]): int[][]
+~rotateCounterClockwise(int[][]): int[][]
++getUtility(): int
++getChildren(): java.util.ArrayList
++printBoard(): void
+-blankBoard(): void
++getLastMove(): java.lang.String
++rotate(java.lang.String): void
++rotateA(): void
++rotateB(): void
++rotateC(): void
++rotateD(): void
++rotatea(): void
++rotateb(): void
++rotatec(): void
++rotated(): void
++determineWinner(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
