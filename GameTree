@@ -10,7 +10,6 @@ public class GameTree
     thisBoard = board;
   }
   
-
   public void populateNodeChildren()
   {
     ArrayList<GameBoard> boardChildren = thisBoard.getChildren();
@@ -21,17 +20,11 @@ public class GameTree
     }
   }
   
-
-
   public int childNumber()
   {
     return children.size();
   }
   
-
-
-
-
   public ArrayList<GameTree> getChildTrees()
   {
     return children;
