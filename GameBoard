@@ -1,7 +1,6 @@
 import java.io.PrintStream;
 import java.util.ArrayList;
 
-
 public class GameBoard
 {
   private int[][] slots;
