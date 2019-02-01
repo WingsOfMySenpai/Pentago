@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=CD_Collection()
+comment1.target=void\ gibGanzeListeAus()
+comment2.params=new_song
+comment2.target=void\ insertion_sort(int)
+comment2.text=Vorausgesetzt,\ dass\ die\ vorhandene\ Liste\ bereits\ aufsteigend\ sortiert\ ist,\nkann\ man\ mit\ Hilfe\ der\ folgenden\ Methode\ schnell\ ein\ weiteres\ Element\ in\ die\ Liste\ einsortieren.\n\n
+numComments=3

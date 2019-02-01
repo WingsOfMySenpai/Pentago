@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=p\ c\ s
+comment0.target=Element(Element,\ Object,\ Element)
+comment0.text=Beim\ Erzeugen\ eines\ neuen\ Elements\ der\ Liste\ werden\ die\ Vorg\u00E4nger\ und\nNachfolger\ und\ der\ Inhalt\ des\ Elements\ festgelegt.\n\n
+comment1.params=s
+comment1.target=void\ setSuccessor(Element)
+comment2.target=Element\ getSuccessor()
+comment3.params=p
+comment3.target=void\ setPredecessor(Element)
+comment4.target=Element\ getPredecessor()
+comment5.params=c
+comment5.target=void\ setContent(Object)
+comment6.target=Object\ getContent()
+numComments=7
